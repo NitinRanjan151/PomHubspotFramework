@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Hubspot Regression suite]" parallel="tests">
+  <listeners>
+    <listener class-name="com.qa.hubspot.Listeners.ExtentReportListener"/>
+  </listeners>
+  <test thread-count="2" name="Hubspot Regressiontest --chrome(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.qa.hubspot.test.LoginPageTest">
+        <methods>
+          <include name="verifyTitleTest"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.qa.hubspot.test.LoginPageTest -->
+    </classes>
+  </test> <!-- Hubspot Regressiontest -chrome(failed) -->
+  <test thread-count="2" name="Hubspot Regressiontest --ff(failed)" parallel="tests">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.qa.hubspot.test.LoginPageTest">
+        <methods>
+          <include name="verifyTitleTest"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.qa.hubspot.test.LoginPageTest -->
+    </classes>
+  </test> <!-- Hubspot Regressiontest -ff(failed) -->
+</suite> <!-- Failed suite [Hubspot Regression suite] -->
